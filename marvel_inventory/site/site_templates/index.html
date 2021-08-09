@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Flask Flashed Messages to the user -->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat == 'user-created' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                {% elif cat == 'auth-success' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ msg }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+</div>
+<div class="container">
+    <header class="row">
+        <div class="col-12 col-md-6" id="header-text">
+            <h2>Let's build the future the Marvel Universe!</h2>
+            <h5>Create an amazing API tool for Marvel fanatics</h5>
+            <div>
+                <button class="btn btn-primary">View Our Docs</button>
+                <button class="btn btn-primary">Join Our Slack</button>
+            </div>
+        </div>
+        <!-- Header Image Here -->
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/undraw_server_status_5pbv.svg" alt="" class="header-image">
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Start of the Middle Section -->
+    <section class="row">
+        <div class="col-12" id="middle-text">
+            <h2>Display Your Collection!</h2>
+            <p>You can harness the power of an API to expand your collection!</p>
+        </div>
+    </section>
+    <!-- End of the Middle Section -->
+    <!-- Start of Features Section -->
+    <section class="row" id="features-section">
+        <div class="col-12 col-md-4">
+                <img src="../../static/images/api.png" alt="API Image" id="api-image">
+                <h4>Dedicated API Routes</h4>
+                <p>
+                    If you are a fan of using traditional API routes, we have thos for you!
+                </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/graphql.png" alt="GraphQL Image" id="graphql-image">
+            <h4>GraphQL API Route</h4>
+            <p>
+                If you want ALL data from one endpoint, we have that too!
+            </p>
+        </div>
+        <div class="col-12 col-md-4">
+            <img src="../../static/images/db.png" alt="Database Image" id="database-image">
+            <h4>Backed by a PostgreSQL Database</h4>
+            <p>
+                All data will be persisted inside a secure Postgress Database.
+            </p>
+        </div>
+    </section>
+    <!-- End of Features -->
+    <!-- Start of Communicty -->
+    <section class="row">
+        <div class="col-12 col-md-6">
+            <img src="../../static/images/InfinityWar5aabd55fed5fa.0.jpg" alt="Marvel Image" id="marvel-image">
+        </div>
+        <div class="col-12 col-md-6">
+            <h4>Talk with like-minded Marvel fanatics</h4>
+            <p>
+                Talk with other devs around the world, and collab
+                on projects with your data. Hop in our Slack channel and give
+                a star to the project on Github!
+            </p>
+            <div>
+                <button class="btn btn-primary">View on Github</button>
+                <button class="btn btn-primary">Join Our Slack Channel!</button>
+            </div>
+        </div>
+    </section>
+    <!-- End of Community Section -->
+    <!-- Start of Footer -->
+    <footer class="row" id="footer">
+        <div class="col-2 col-md-2">
+            <img src="../../static/images/marvel-characters.jpeg" alt="CD Logo" id="footer-logo">
+        </div>
+
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Platforms</h4>
+                <p>Why Marvel?</p>
+                <p>The Marvel Universe</p>
+                <p>Donate</p>
+                <p>Social Media Links</p>
+                <p>Our Process</p>
+            </div>
+        </div>
+
+    </footer>
+</div>
+
+{% endblock content %}
+
